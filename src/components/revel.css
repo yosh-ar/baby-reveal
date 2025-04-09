@@ -1,0 +1,148 @@
+/* Contenedor principal */
+.dino-reveal-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.dino-reveal-container.boy {
+  background: linear-gradient(135deg, #e1f0fa 0%, #4e9af1 100%);
+}
+
+.dino-reveal-container.girl {
+  background: linear-gradient(135deg, #ffe6eb 0%, #FF6B9E 100%);
+}
+
+/* Imagen de fondo */
+.dino-reveal-bg-image {
+  position: absolute;
+  height: 100%;
+  width: auto;
+  opacity: 0.1;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Tarjeta de contenido */
+.dino-reveal-card {
+  text-align: center;
+  padding: 2.5rem;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 25px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  max-width: 90%;
+  position: relative;
+  z-index: 10;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(5px);
+}
+
+/* Título */
+.dino-reveal-title {
+  font-size: 3.2rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+  background: linear-gradient(135deg, #FF6B9E 0%, #4e9af1 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Contenedor de la imagen */
+.dino-reveal-icon-container {
+  position: relative;
+  margin: 2rem 0;
+}
+
+/* Imagen principal del dinosaurio */
+.dino-reveal-main-image {
+  height: 180px;
+  width: auto;
+  filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.2));
+}
+
+/* Badge de género */
+.dino-reveal-gender-badge {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: white;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  animation: dino-pulse 2s infinite;
+}
+
+/* Mensaje */
+.dino-reveal-message {
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* Temporizador */
+.dino-reveal-countdown {
+  font-size: 1.2rem;
+  color: #666;
+  margin-top: 2rem;
+  font-weight: 500;
+}
+
+/* Animaciones */
+@keyframes dino-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .dino-reveal-title {
+    font-size: 2.5rem;
+  }
+  
+  .dino-reveal-main-image {
+    height: 140px;
+  }
+  
+  .dino-reveal-message {
+    font-size: 1.3rem;
+  }
+  
+  .dino-reveal-gender-badge {
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .dino-reveal-card {
+    padding: 1.8rem;
+    max-width: 95%;
+  }
+  
+  .dino-reveal-title {
+    font-size: 2rem;
+  }
+  
+  .dino-reveal-main-image {
+    height: 120px;
+  }
+  
+  .dino-reveal-message {
+    font-size: 1.2rem;
+  }
+}

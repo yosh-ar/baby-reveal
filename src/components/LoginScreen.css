@@ -1,0 +1,471 @@
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  .login-container {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+  
+  .side {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: visible !important; 
+  }
+  
+  .left-side {
+    background-color: #FFC0CB;
+  }
+  
+  .right-side {
+    background-color: #ADD8E6;
+  }
+  
+  .dino-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .dino-image {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    min-width: 400px;
+    min-height: 400px;
+    object-fit: contain;
+    image-rendering: crisp-edges;
+  } */
+  
+  /* .left-side:hover .dino-image {
+    transform: rotate(-10deg) scale(1.05);
+  }
+  
+  .right-side:hover .dino-image {
+    transform: rotate(10deg) scale(1.05);
+  }
+   */
+  /* Contenido central mejorado */
+  .center-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 10;
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  .center-text {
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 25px 40px;
+    border-radius: 20px;
+    margin-bottom: 25px;
+    display: inline-block;
+    backdrop-filter: blur(5px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .center-text h1 {
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+    color: #333;
+    background: linear-gradient(135deg, #FF6B9E 0%, #4e9af1 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .center-text h2 {
+    font-size: 1.8rem;
+    font-weight: normal;
+    color: #555;
+  }
+  
+  /* Formulario super mejorado */
+  .password-form {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    width: 24rem;
+    max-width: 90%;
+    margin: 0 auto;
+    backdrop-filter: blur(8px);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+  }
+  
+  .input-container {
+    position: relative;
+    margin-bottom: 20px;
+  }
+  
+  .input-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+    color: #FF6B9E;
+  }
+  
+  .form-input {
+    border: 2px solid #FFC0CB;
+    padding: 16px 20px 16px 45px;
+    width: 100%;
+    border-radius: 15px;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #555;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
+  }
+  
+  .form-input:focus {
+    outline: none;
+    border-color: #4e9af1;
+    box-shadow: 0 0 0 3px rgba(78, 154, 241, 0.3), inset 0 2px 5px rgba(0, 0, 0, 0.05);
+  }
+  
+  .input-error {
+    border-color: #ff4757;
+    animation: shake 0.5s;
+  }
+  
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-5px); }
+    40%, 80% { transform: translateX(5px); }
+  }
+  
+  .error-message {
+    color: #ff4757;
+    margin: -10px 0 20px 0;
+    font-weight: 500;
+    text-align: center;
+    font-size: 1rem;
+  }
+  
+  .submit-button {
+    background: linear-gradient(135deg, #FF6B9E 0%, #4e9af1 100%);
+    color: white;
+    padding: 16px;
+    border: none;
+    border-radius: 15px;
+    width: 100%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .submit-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  }
+  
+  .submit-button:active {
+    transform: translateY(1px);
+  }
+  
+  .submit-button::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+      to bottom right,
+      rgba(255, 255, 255, 0.3) 0%,
+      rgba(255, 255, 255, 0) 60%
+    );
+    transform: rotate(30deg);
+    transition: all 0.3s ease;
+  }
+  
+  .submit-button:hover::after {
+    animation: shine 1.5s infinite;
+  }
+  
+  @keyframes shine {
+    0% { left: -50%; }
+    100% { left: 150%; }
+  }
+  
+  .button-text {
+    letter-spacing: 0.5px;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .button-icon {
+    font-size: 1.4rem;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .submit-button:hover .button-icon {
+    transform: scale(1.2) rotate(10deg);
+  }
+  
+  /* Efectos especiales */
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  .dino-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+
+
+/* ------------------------- */
+/* MEDIA QUERIES RESPONSIVE  */
+/* ------------------------- */
+
+/* Tablet (768px) */
+@media (max-width: 768px) {
+    .dino-image {
+      max-height: 70vh;
+    }
+    
+    .center-text h1 {
+      font-size: 2.2rem;
+    }
+    
+    .center-text h2 {
+      font-size: 1.4rem;
+    }
+    
+    .password-form {
+      width: 22rem;
+    }
+  }
+  
+  /* Mobile Landscape (640px) */
+  @media (max-width: 640px) and (orientation: landscape) {
+    .login-container {
+      flex-direction: column; /* Cambia a vertical */
+    }
+    
+    .dino-container {
+      padding: 2%;
+    }
+    
+    .dino-image {
+      max-height: 50vh;
+    }
+    
+    .center-content {
+      top: 40%;
+      max-width: 90%;
+    }
+  }
+  
+  /* Mobile Portrait (480px) */
+  @media (max-width: 480px) {
+    .login-container {
+      flex-direction: column; /* Apila verticalmente */
+    }
+    
+    .side {
+      flex: none;
+      height: 50vh;
+      width: 100%;
+    }
+    
+    .dino-image {
+      max-height: 45vh;
+      min-width: 300px;
+    }
+    
+    .center-content {
+      top: 40%;
+      max-width: 95%;
+    }
+    
+    .center-text {
+      padding: 15px 25px;
+      margin-bottom: 15px;
+    }
+    
+    .password-form {
+      width: 20rem;
+      padding: 20px;
+    }
+    
+    .center-text h1 {
+      font-size: 1.8rem;
+      white-space: normal;
+    }
+    
+    .center-text h2 {
+      font-size: 1.2rem;
+      white-space: normal;
+    }
+  }
+  
+  /* Pantallas muy pequeñas (360px) */
+  @media (max-width: 360px) {
+    .dino-image {
+      min-width: 250px;
+    }
+    
+    .password-form {
+      width: 18rem;
+    }
+    
+    .form-input {
+      padding: 12px 15px 12px 40px;
+    }
+  }
+
+
+  /* ESTILOS BASE (se mantienen igual) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  .login-container {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+  
+  .side {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: visible !important;
+  }
+  
+  .left-side {
+    background-color: #FFC0CB;
+  }
+  
+  .right-side {
+    background-color: #ADD8E6;
+  }
+  
+  /* CONTENEDOR DINOSAURIO - VERSIÓN GIGANTE DEFINITIVA */
+  .dino-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .dino-image {
+    /* Tamaño garantizado para ser enorme */
+    width: 90vmin; /* Relativo al viewport más pequeño */
+    height: 90vmin;
+    
+    /* Forzar tamaño mínimo absoluto */
+    min-width: 300px;
+    min-height: 300px;
+    
+    /* Aseguramos que mantenga proporciones */
+    object-fit: contain;
+    
+    /* Mejoramos la visualización */
+    image-rendering: crisp-edges;
+    filter: drop-shadow(0 5px 10px rgba(0,0,0,0.2));
+  }
+  
+  /* ------------------------- */
+  /* MEDIA QUERIES ESPECIALES  */
+  /* ------------------------- */
+  
+  /* Para pantallas cuadradas o casi cuadradas */
+  @media (max-aspect-ratio: 1/1) and (max-width: 768px) {
+    .login-container {
+      flex-direction: column;
+    }
+    
+    .side {
+      height: 50vh;
+      width: 100vw;
+    }
+    
+    .dino-image {
+      width: 80vw;
+      height: 80vw;
+    }
+  }
+  
+  /* Ajuste especial para tablets pequeñas */
+  @media (min-width: 481px) and (max-width: 768px) and (min-aspect-ratio: 1/1) {
+    .dino-image {
+      width: 70vh;
+      height: 70vh;
+    }
+  }
+  
+  /* Ajuste para móviles en landscape */
+  @media (max-height: 500px) and (orientation: landscape) {
+    .dino-image {
+      width: 80vh;
+      height: 80vh;
+    }
+  }
+  
+  /* Contenido central (se mantiene igual) */
+  .center-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 20;
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  /* ... (el resto de tus estilos se mantienen igual) ... */
